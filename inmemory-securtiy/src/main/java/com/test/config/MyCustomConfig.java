@@ -23,6 +23,8 @@ public class MyCustomConfig {
     @Bean
     UserDetailsService authenticationProvider(){
         UserDetails user1= User.withDefaultPasswordEncoder().username("xyz").password("12345").build();
-        return new InMemoryUserDetailsManager(user1);
+        UserDetails user2=User.withDefaultPasswordEncoder().username("ab").password("abc").build();
+        UserDetails user3=User.withDefaultPasswordEncoder().username("db").password("db1").build();
+        return new InMemoryUserDetailsManager(user1,user2);
     }
 }
